@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<h1>🚀 Bienvenue sur le site de Lenny</h1>
+<style>
+* {
+box-sizing: border-box;
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+color: white;
+background: linear-gradient(135deg, #141e30, #243b55);
+transition: 0.5s;
+}
+
+/* MENU */
+
+nav {
+position: sticky;
+top: 0;
+z-index: 100;
+padding: 20px;
+text-align: center;
+background: rgba(0, 0, 0, 0.35);
+backdrop-filter: blur(10px);
+}
+
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 15px;
+font-weight: bold;
+}
+
+nav a:hover {
+color: #ffd700;
+}
+
+/* ACCUEIL */
+
+.hero {
+min-height: 90vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 30px;
+animation: apparition 1.2s ease;
+}
+
+.hero h1 {
+font-size: 60px;
+margin: 10px;
+animation: flottement 3s infinite ease-in-out;
+}
+
+.hero p {
+font-size: 22px;
+max-width: 650px;
+}
+
+/* BOUTONS */
+
+button {
+padding: 15px 25px;
+margin: 10px;
+border: none;
+border-radius: 12px;
+font-size: 17px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+button:hover {
+transform: scale(1.08);
+}
+
+.principal {
+background: white;
+color: #243b55;
+}
+
+.secondaire {
+background: transparent;
+color: white;
+border: 2px solid white;
+}
+
+/* SECTIONS */
+
+section {
+padding: 90px 20px;
+text-align: center;
+}
+
+.carte {
+max-width: 750px;
+margin: auto;
+padding: 40px;
+border-radius: 25px;
+background: rgba(255, 255, 255, 0.12);
+box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.carte h2 {
+font-size: 38px;
+}
+
+#message {
+font-size: 22px;
+min-height: 30px;
+}
+
+/* ANIMATIONS */
+
+@keyframes apparition {
+from {
+opacity: 0;
+transform: translateY(40px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes flottement {
+0%, 100% {
+transform: translateY(0);
+}
+
+50% {
+transform: translateY(-12px);
+}
+}
+
+/* MODE CLAIR */
+
+body.clair {
+color: #222;
+background: linear-gradient(135deg, #89f7fe, #66a6ff);
+}
+
+body.clair nav {
+background: rgba(255,255,255,0.35);
+}
+
+body.clair nav a {
+color: #222;
+}
+
+body.clair .secondaire {
+color: #222;
+border-color: #222;
+}
+
+/* TELEPHONE */
+
+@media (max-width: 600px) {
+.hero h1 {
+font-size: 40px;
+}
+
+nav a {
+margin: 5px;
+font-size: 14px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+
+<nav>
+<a href="#accueil">🏠 Accueil</a>
+<a href="#presentation">👋 Présentation</a>
+<a href="#projets">🚀 Projets</a>
+<a href="apropos.html">ℹ️ À propos</a>
+</nav>
+
+
+<!-- ACCUEIL -->
+
+<div class="hero" id="accueil">
+
+<h1>🚀 Mon Super Site</h1>
+
+<p>
+Bienvenue sur mon site !
+Je suis en train d'apprendre à créer des sites web.
+</p>
+
+<div>
+
+<button class="principal" onclick="direBonjour()">
+👋 Dire bonjour
+</button>
+
+<button class="secondaire" onclick="surprise()">
+🎁 Surprise
+</button>
+
+<button class="secondaire" onclick="changerMode()">
+🌙 Changer le mode
+</button>
+
+</div>
+
+<p id="message"></p>
+
+</div>
+
+
+<!-- PRESENTATION -->
+
+<section id="presentation">
+
+<div class="carte">
+
+<h2>👋 Salut, moi c'est Lenny !</h2>
+
+<p>
+Bonjour ! Je m'appelle Lenny. 😊
+</p>
+
+<p>
+Je m'intéresse à l'informatique et j'ai envie
+d'en apprendre toujours plus sur la programmation,
+les sites web et la création de projets. 💻🚀
+</p>
+
+<p>
+Ce site est l'un de mes premiers projets,
+et je compte continuer à l'améliorer !
+</p>
+<button class="principal" onclick="presentation()">
+💡 En savoir plus
+</button>
+
+<p id="info"></p>
+
+</div>
+
+</section>
+
+
+<!-- PROJETS -->
+
+<section id="projets">
+
+<div class="carte">
+
+<h2>🚀 Mes projets</h2>
+
+<p>
+Voici les projets que je vais créer.
+</p>
+
+<button class="principal" onclick="projet1()">
+🎮 Projet 1
+</button>
+
+<button class="principal" onclick="projet2()">
+💻 Projet 2
+</button>
+
+<p id="projetMessage"></p>
+
+</div>
+
+</section>
+
+
+<!-- PIED DE PAGE -->
+
+<footer>
+<p>Créé avec du HTML, du CSS et du JavaScript 💻</p>
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function direBonjour() {
+document.getElementById("message").textContent =
+"👋 Salut ! Merci d'être venu sur mon site !";
+}
+
+function surprise() {
+document.getElementById("message").textContent =
+"🎉 SURPRISE ! Tu viens de découvrir une fonction JavaScript !";
+}
+
+function changerMode() {
+document.body.classList.toggle("clair");
+}
+
+function presentation() {
+document.getElementById("info").textContent =
+"🔥 Mon objectif : apprendre à créer des projets de plus en plus cool !";
+}
+
+function projet1() {
+document.getElementById("projetMessage").textContent =
+"🎮 Projet 1 : un jeu vidéo !";
+}
+
+function projet2() {
+document.getElementById("projetMessage").textContent =
+"💻 Projet 2 : une nouvelle application web !";
+}
+
+</script>
+
+</body>
+</html>

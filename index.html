@@ -1,71 +1,1286 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lenny Academy — Formations gratuites</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lenny Academy</title>
+
 <style>
-:root{--bg:#07111f;--card:#0e1b2d;--card2:#12243b;--text:#eef5ff;--muted:#a9bad0;--accent:#6ea8fe;--accent2:#8b7cff;--ok:#66d19e;--danger:#ff7181;--line:rgba(255,255,255,.1)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 15% 0%,#17345a 0,#07111f 38%),var(--bg);color:var(--text);min-height:100vh}
-button,input{font:inherit}button{cursor:pointer}.hidden{display:none!important}
-header{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:12px;padding:14px 20px}.brand{font-weight:800;font-size:20px;margin-right:auto}.brand span{color:var(--accent)}
-.nav button{border:0;background:transparent;color:var(--text);padding:10px 12px;border-radius:10px}.nav button:hover{background:rgba(255,255,255,.08)}
-.pill{background:var(--accent);color:#07111f!important;font-weight:700}.user{color:var(--muted);font-size:14px}
-main{max-width:1180px;margin:auto;padding:50px 20px}.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center;padding:45px 0 65px}.hero h1{font-size:clamp(40px,6vw,70px);line-height:1.02;margin:0 0 18px}.gradient{background:linear-gradient(90deg,#fff,#8db8ff,#9b8bff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:19px;line-height:1.6;max-width:680px}.hero-card{background:linear-gradient(145deg,rgba(110,168,254,.18),rgba(139,124,255,.1));border:1px solid var(--line);padding:28px;border-radius:24px;box-shadow:0 25px 70px rgba(0,0,0,.25)}
-.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:700}.primary{background:var(--accent);color:#07111f}.secondary{background:rgba(255,255,255,.08);color:var(--text);border:1px solid var(--line)}.danger{background:rgba(255,113,129,.12);color:#ff9ba7;border:1px solid rgba(255,113,129,.25)}
-h2.section{font-size:34px;margin:15px 0 25px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:rgba(14,27,45,.9);border:1px solid var(--line);border-radius:20px;padding:22px;transition:.2s}.card:hover{transform:translateY(-4px);border-color:rgba(110,168,254,.45)}.icon{font-size:34px}.card h3{font-size:21px}.muted{color:var(--muted);line-height:1.55}.price{font-size:22px;font-weight:800;color:var(--ok)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
-.panel{background:rgba(14,27,45,.9);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px}.row{display:flex;justify-content:space-between;gap:15px;align-items:center}.tag{display:inline-block;padding:6px 9px;border-radius:999px;background:rgba(102,209,158,.12);color:var(--ok);font-size:13px}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:50;display:flex;align-items:center;justify-content:center;padding:20px}.modal-box{width:min(460px,100%);background:#0e1b2d;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 30px 100px rgba(0,0,0,.5)}.modal-box h2{margin-top:0}.field{margin:12px 0}.field label{display:block;color:var(--muted);font-size:14px;margin-bottom:6px}.field input{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#07111f;color:white;outline:none}.field input:focus{border-color:var(--accent)}.notice{padding:12px;border-radius:10px;background:rgba(110,168,254,.1);color:#cfe0ff;margin:12px 0}.error{color:#ff9ba7}.success{color:#9af0bf}
-footer{border-top:1px solid var(--line);margin-top:70px;padding:35px 20px;text-align:center;color:var(--muted)}
-@media(max-width:850px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.nav{flex-wrap:wrap}.user{order:5;width:100%}}
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+color: white;
+background: linear-gradient(135deg, #07111f, #173b68);
+min-height: 100vh;
+}
+
+header {
+position: sticky;
+top: 0;
+z-index: 10;
+background: rgba(5, 12, 25, 0.95);
+padding: 18px;
+}
+
+nav {
+max-width: 1100px;
+margin: auto;
+display: flex;
+align-items: center;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.logo {
+font-size: 22px;
+font-weight: bold;
+margin-right: auto;
+}
+
+.logo span {
+color: #70aaff;
+}
+
+nav button {
+border: none;
+padding: 11px 15px;
+border-radius: 10px;
+background: transparent;
+color: white;
+cursor: pointer;
+font-weight: bold;
+}
+
+nav button:hover {
+background: rgba(255,255,255,0.12);
+}
+
+main {
+max-width: 1100px;
+margin: auto;
+padding: 50px 20px;
+}
+
+.page {
+display: none;
+}
+
+.page.active {
+display: block;
+}
+
+.hero {
+min-height: 70vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.hero h1 {
+font-size: 60px;
+margin-bottom: 20px;
+}
+
+.hero p {
+color: #b8c7da;
+font-size: 20px;
+max-width: 700px;
+line-height: 1.6;
+margin: auto;
+}
+
+.btn {
+border: none;
+border-radius: 12px;
+padding: 13px 20px;
+margin: 6px;
+cursor: pointer;
+font-weight: bold;
+}
+
+.primary {
+background: #70aaff;
+color: #07111f;
+}
+
+.secondary {
+background: #263d5b;
+color: white;
+}
+
+.green {
+background: #67d89a;
+color: #07111f;
+}
+
+.red {
+background: #e95d6a;
+color: white;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+}
+
+.card {
+background: rgba(255,255,255,0.08);
+border: 1px solid rgba(255,255,255,0.12);
+border-radius: 20px;
+padding: 25px;
+transition: 0.2s;
+}
+
+.card:hover {
+transform: translateY(-5px);
+}
+
+.icon {
+font-size: 40px;
+}
+
+.card p {
+color: #b8c7da;
+line-height: 1.5;
+}
+
+.price {
+color: #67d89a !important;
+font-size: 22px;
+font-weight: bold;
+}
+
+.panel {
+background: rgba(255,255,255,0.08);
+border-radius: 20px;
+padding: 25px;
+margin-bottom: 20px;
+}
+
+.hidden {
+display: none !important;
+}
+
+input {
+width: 100%;
+padding: 13px;
+margin: 8px 0 15px;
+border-radius: 10px;
+border: 1px solid #415875;
+background: #091525;
+color: white;
+}
+
+.modal {
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.75);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 100;
+padding: 20px;
+}
+
+.modal-box {
+width: 100%;
+max-width: 430px;
+background: #102238;
+border-radius: 20px;
+padding: 25px;
+}
+
+.modal-box h2 {
+margin-top: 0;
+}
+
+.message {
+padding: 12px;
+border-radius: 10px;
+background: rgba(112,170,255,0.12);
+color: #d9e8ff;
+}
+
+.document {
+background: rgba(0,0,0,0.2);
+padding: 18px;
+margin-top: 12px;
+border-radius: 15px;
+}
+
+footer {
+text-align: center;
+color: #9dafc5;
+padding: 40px;
+border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media(max-width:800px) {
+.grid {
+grid-template-columns: 1fr;
+}
+
+.hero h1 {
+font-size: 40px;
+}
+}
 </style>
 </head>
+
 <body>
-<header><div class="nav">
-<div class="brand">🚀 Lenny <span>Academy</span></div>
-<button onclick="show('home')">Accueil</button>
-<button onclick="show('courses')">Formations</button>
-<button onclick="show('orders')">Mes formations</button>
-<button id="authBtn" class="pill" onclick="openAuth()">Se connecter</button>
-<span id="userLabel" class="user"></span>
-</div></header>
+
+<header>
+<nav>
+
+<div class="logo">
+🚀 Lenny <span>Academy</span>
+</div>
+
+<button onclick="showPage('accueil')">
+🏠 Accueil
+</button>
+
+<button onclick="showPage('formations')">
+🎓 Formations
+</button>
+
+<button onclick="showPage('commandes')">
+📚 Mes formations
+</button>
+
+<button id="connexionBouton" onclick="ouvrirConnexion()">
+👤 Se connecter
+</button>
+
+</nav>
+</header>
+
 
 <main>
-<section id="home" class="view">
+
+<!-- ACCUEIL -->
+
+<section id="accueil" class="page active">
+
 <div class="hero">
-<div><span class="tag">100 % gratuit</span><h1>Apprends à créer.<br><span class="gradient">Construis tes projets.</span></h1>
-<p>Des formations simples pour apprendre le HTML, le CSS, JavaScript, Python et la création de sites web.</p>
-<div class="actions"><button class="btn primary" onclick="show('courses')">Voir les formations</button><button class="btn secondary" onclick="show('orders')">Mes formations</button></div></div>
-<div class="hero-card"><h2>📚 Ton espace d'apprentissage</h2><p class="muted">Crée un compte, ajoute jusqu'à 2 formations à ta commande gratuite, puis retrouve tes PDF dans ton espace.</p><p>🔐 Compte personnel<br>📦 Commandes enregistrées<br>📄 12 PDF de cours<br>💰 0 €</p></div>
+
+<div>
+
+<h1>
+Apprends à créer.<br>
+Construis tes projets. 🚀
+</h1>
+
+<p>
+Bienvenue sur Lenny Academy.
+Apprends le HTML, le CSS, JavaScript,
+Python et la création de sites web.
+</p>
+
+<br>
+
+<button class="btn primary"
+onclick="showPage('formations')">
+
+🎓 Voir les formations
+
+</button>
+
 </div>
+
+</div>
+
 </section>
 
-<section id="courses" class="view hidden">
-<h2 class="section">🎓 Les formations</h2>
-<p class="muted">Toutes les formations sont gratuites. Une commande peut contenir au maximum 2 formations.</p>
-<div id="coursesGrid" class="grid"></div>
+
+<!-- FORMATIONS -->
+
+<section id="formations" class="page">
+
+<h1>🎓 Mes formations</h1>
+
+<p>
+Toutes les formations sont gratuites.
+Maximum 2 formations par commande.
+</p>
+
+<br>
+
+<div class="grid" id="listeFormations"></div>
+
 </section>
 
-<section id="orders" class="view hidden">
-<h2 class="section">📚 Mes formations</h2>
-<div id="ordersBox"></div>
+
+<!-- COMMANDES -->
+
+<section id="commandes" class="page">
+
+<h1>📚 Mes formations</h1>
+
+<div id="contenuCommandes"></div>
+
 </section>
+
 </main>
 
-<footer>Créé avec HTML, CSS et JavaScript 💻 · Lenny Academy</footer>
 
-<div id="authModal" class="modal hidden">
+<footer>
+
+🚀 Lenny Academy<br>
+Créé avec HTML, CSS et JavaScript 💻
+
+</footer>
+
+
+<!-- FENETRE CONNEXION -->
+
+<div id="modalConnexion" class="modal hidden">
+
 <div class="modal-box">
-<div class="row"><h2 id="authTitle">Se connecter</h2><button class="btn secondary" onclick="closeAuth()">✕</button></div>
-<div id="authMsg" class="notice hidden"></div>
-<div class="field"><label>Adresse e-mail</label><input id="email" type="email" autocomplete="email" placeholder="exemple@email.com"></div>
-<div class="field"><label>Mot de passe</label><input id="password" type="password" autocomplete="current-password" placeholder="••••••••"></div>
-<div id="confirmField" class="field hidden"><label>Confirmer le mot de passe</label><input id="password2" type="password" autocomplete="new-password"></div>
-<div class="actions"><button id="authSubmit" class="btn primary" onclick="submitAuth()">Se connecter</button><button class="btn secondary" onclick="toggleAuth()">Créer un compte</button></div>
-<p class="muted" style="font-size:13px">Mode local de démonstration : les comptes restent dans ce navigateur. Ce n'est pas encore une authentification sécurisée pour un vrai site public.</p>
-</div></div>
+
+<h2 id="titreConnexion">
+👤 Se connecter
+</h2>
+
+<div id="messageConnexion"></div>
+
+<label>
+Adresse e-mail
+</label>
+
+<input
+id="email"
+type="email"
+placeholder="exemple@email.com"
+>
+
+<label>
+Mot de passe
+</label>
+
+<input
+id="motDePasse"
+type="password"
+placeholder="Mot de passe"
+>
+
+<div id="confirmationMotDePasse"
+class="hidden">
+
+<label>
+Confirmer le mot de passe
+</label>
+
+<input
+id="motDePasse2"
+type="password"
+placeholder="Confirmer"
+>
+
+</div>
+
+<button
+class="btn primary"
+onclick="validerConnexion()"
+id="boutonConnexion">
+
+Se connecter
+
+</button>
+
+<button
+class="btn secondary"
+onclick="changerModeConnexion()">
+
+Créer un compte
+
+</button>
+
+<button
+class="btn red"
+onclick="fermerConnexion()">
+
+Fermer
+
+</button>
+
+</div>
+
+</div>
+
 
 <script>
-const FORMATIONS = [{"id": 1, "name": "Formation HTML", "icon": "🌐", "desc": "Apprends à construire les bases d’une page web et à créer ta première structure HTML."}, {"id": 2, "name": "Formation CSS", "icon": "🎨", "desc": "Apprends à donner un vrai design à ton site : couleurs, cartes, boutons et responsive."}, {"id": 3, "name": "Formation JavaScript", "icon": "⚡", "desc": "Rends ton site interactif avec les fonctions, événements et modifications de la page."}, {"id": 4, "name": "Formation Python", "icon": "🐍", "desc": "Découvre les bases de la programmation avec Python : variables, entrées, conditions et boucles."}, {"id": 5, "name": "Création de site", "icon": "💻", "desc": "Réunis HTML, CSS et JavaScript pour construire un projet web organisé."}, {"id": 6, "name": "Projet complet", "icon": "🚀", "desc": "Mets tout ensemble dans un projet complet et apprends à tester et améliorer ton travail."}];
-const PDF_DATA = {"1":
+
+/* =========================
+FORMATIONS
+========================= */
+
+const formations = [
+
+{
+id: 1,
+nom: "Formation HTML",
+icone: "🌐",
+description: "Apprends les bases du HTML et crée tes premières pages web.",
+documents: [
+{
+titre: "HTML - Les bases",
+texte: "HTML permet de construire la structure d'une page web. Apprends les balises html, head, body, h1, p, a et button."
+},
+{
+titre: "HTML - Première page",
+texte: "Crée une page personnelle avec un titre, des paragraphes, des liens et des boutons. Organise correctement ton document HTML."
+}
+]
+},
+
+{
+id: 2,
+nom: "Formation CSS",
+icone: "🎨",
+description: "Apprends à rendre ton site beau et moderne avec CSS.",
+documents: [
+{
+titre: "CSS - Les bases",
+texte: "CSS permet de modifier les couleurs, les tailles, les marges, les bordures et l'apparence des éléments HTML."
+},
+{
+titre: "CSS - Design moderne",
+texte: "Apprends à créer des cartes, des boutons, des animations et des mises en page adaptées aux téléphones."
+}
+]
+},
+
+{
+id: 3,
+nom: "Formation JavaScript",
+icone: "⚡",
+description: "Apprends à rendre tes sites interactifs.",
+documents: [
+{
+titre: "JavaScript - Les bases",
+texte: "JavaScript permet de rendre une page interactive. Découvre les fonctions, les variables et les clics sur les boutons."
+},
+{
+titre: "JavaScript - Interactions",
+texte: "Apprends à modifier une page grâce à JavaScript et à réagir aux actions de l'utilisateur."
+}
+]
+},
+
+{
+id: 4,
+nom: "Formation Python",
+icone: "🐍",
+description: "Découvre les bases de la programmation avec Python.",
+documents: [
+{
+titre: "Python - Débuter",
+texte: "Découvre print(), input(), les variables et les premiers types de données."
+},
+{
+titre: "Python - Conditions et boucles",
+texte: "Apprends à utiliser if, else, for et while pour créer des programmes plus intelligents."
+}
+]
+},
+
+{
+id: 5,
+nom: "Création de site",
+icone: "💻",
+description: "Apprends à réunir HTML, CSS et JavaScript dans un vrai projet.",
+documents: [
+{
+titre: "Créer un projet web",
+texte: "Organise ton projet avec HTML, CSS et JavaScript. Crée plusieurs pages et une navigation claire."
+},
+{
+titre: "Créer une boutique",
+texte: "Découvre comment construire une interface de boutique avec des produits, des prix et un panier."
+}
+]
+},
+
+{
+id: 6,
+nom: "Projet complet",
+icone: "🚀",
+description: "Mets toutes tes connaissances ensemble dans un projet.",
+documents: [
+{
+titre: "Construire ton projet",
+texte: "Définis une idée puis construis progressivement la structure HTML, le design CSS et les interactions JavaScript."
+},
+{
+titre: "Tester et améliorer",
+texte: "Teste ton projet, corrige les erreurs, améliore le design et ajoute progressivement de nouvelles fonctionnalités."
+}
+]
+}
+
+];
+
+
+/* =========================
+COMPTES
+========================= */
+
+let utilisateurs =
+JSON.parse(localStorage.getItem("lenny_utilisateurs") || "[]");
+
+let utilisateurConnecte =
+localStorage.getItem("lenny_utilisateur") || "";
+
+let commandes =
+JSON.parse(localStorage.getItem("lenny_commandes") || "[]");
+
+let panier = [];
+
+let modeConnexion = true;
+
+
+/* =========================
+AFFICHAGE DES FORMATIONS
+========================= */
+
+function afficherFormations() {
+
+const zone =
+document.getElementById("listeFormations");
+
+zone.innerHTML = "";
+
+formations.forEach(function(formation) {
+
+zone.innerHTML += `
+
+<div class="card">
+
+<div class="icon">
+${formation.icone}
+</div>
+
+<h2>
+${formation.nom}
+</h2>
+
+<p>
+${formation.description}
+</p>
+
+<p class="price">
+0 €
+</p>
+
+<button
+class="btn primary"
+onclick="ajouterFormation(${formation.id})">
+
+📚 Ajouter
+
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/* =========================
+CHANGER DE PAGE
+========================= */
+
+function showPage(page) {
+
+document.querySelectorAll(".page")
+.forEach(function(element) {
+
+element.classList.remove("active");
+
+});
+
+document.getElementById(page)
+.classList.add("active");
+
+if(page === "commandes") {
+
+afficherCommandes();
+
+}
+
+window.scrollTo(0,0);
+
+}
+
+
+/* =========================
+AJOUT FORMATION
+========================= */
+
+function ajouterFormation(id) {
+
+if(!utilisateurConnecte) {
+
+ouvrirConnexion();
+
+return;
+
+}
+
+if(panier.length >= 2) {
+
+alert(
+"⚠️ Tu peux avoir maximum 2 formations par commande."
+);
+
+return;
+
+}
+
+if(panier.includes(id)) {
+
+alert(
+"Cette formation est déjà dans ton panier."
+);
+
+return;
+
+}
+
+panier.push(id);
+
+let formationsChoisies =
+panier.map(function(idFormation) {
+
+return idFormation;
+
+});
+
+let confirmation =
+confirm(
+"Formation ajoutée !\n\n" +
+"Tu peux ajouter une deuxième formation.\n\n" +
+"Valider maintenant ?"
+);
+
+if(confirmation) {
+
+validerCommande();
+
+}
+
+}
+
+
+/* =========================
+VALIDATION
+========================= */
+
+function validerCommande() {
+
+if(panier.length === 0) {
+
+alert("Ton panier est vide.");
+
+return;
+
+}
+
+commandes.push({
+
+email: utilisateurConnecte,
+
+date: new Date().toLocaleString("fr-FR"),
+
+formations: [...panier]
+
+});
+
+localStorage.setItem(
+"lenny_commandes",
+JSON.stringify(commandes)
+);
+
+panier = [];
+
+alert(
+"🎉 Commande validée !\n\n" +
+"Tes formations sont maintenant disponibles."
+);
+
+afficherCommandes();
+
+showPage("commandes");
+
+}
+
+
+/* =========================
+COMMANDES
+========================= */
+
+function afficherCommandes() {
+
+const zone =
+document.getElementById("contenuCommandes");
+
+if(!utilisateurConnecte) {
+
+zone.innerHTML = `
+
+<div class="panel">
+
+<h2>
+🔐 Connecte-toi
+</h2>
+
+<p>
+Connecte-toi pour voir tes formations.
+</p>
+
+<button
+class="btn primary"
+onclick="ouvrirConnexion()">
+
+Se connecter
+
+</button>
+
+</div>
+
+`;
+
+return;
+
+}
+
+let mesCommandes =
+commandes.filter(function(commande) {
+
+return commande.email === utilisateurConnecte;
+
+});
+
+if(mesCommandes.length === 0) {
+
+zone.innerHTML = `
+
+<div class="panel">
+
+<h2>
+📚 Aucune formation
+</h2>
+
+<p>
+Tu n'as encore aucune formation.
+</p>
+
+<button
+class="btn primary"
+onclick="showPage('formations')">
+
+Voir les formations
+
+</button>
+
+</div>
+
+`;
+
+return;
+
+}
+
+zone.innerHTML = "";
+
+mesCommandes.forEach(function(commande, index) {
+
+zone.innerHTML += `
+
+<div class="panel">
+
+<h2>
+📦 Commande #${index + 1}
+</h2>
+
+<p>
+Date : ${commande.date}
+</p>
+
+<p>
+Prix : <strong>0 €</strong>
+</p>
+
+${commande.formations.map(function(id) {
+
+let formation =
+formations.find(function(f) {
+
+return f.id === id;
+
+});
+
+return `
+
+<div class="document">
+
+<h2>
+${formation.icone}
+${formation.nom}
+</h2>
+
+<p>
+${formation.description}
+</p>
+
+<button
+class="btn primary"
+onclick="ouvrirPDF(${id},0)">
+
+📄 Document 1
+
+</button>
+
+<button
+class="btn primary"
+onclick="ouvrirPDF(${id},1)">
+
+📄 Document 2
+
+</button>
+
+</div>
+
+`;
+
+}).join("")}
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/* =========================
+CONNEXION
+========================= */
+
+function ouvrirConnexion() {
+
+if(utilisateurConnecte) {
+
+deconnexion();
+
+return;
+
+}
+
+document
+.getElementById("modalConnexion")
+.classList.remove("hidden");
+
+}
+
+
+function fermerConnexion() {
+
+document
+.getElementById("modalConnexion")
+.classList.add("hidden");
+
+}
+
+
+function changerModeConnexion() {
+
+modeConnexion = !modeConnexion;
+
+document
+.getElementById("titreConnexion")
+.textContent =
+modeConnexion
+? "👤 Se connecter"
+: "📝 Créer un compte";
+
+document
+.getElementById("boutonConnexion")
+.textContent =
+modeConnexion
+? "Se connecter"
+: "Créer mon compte";
+
+document
+.getElementById("confirmationMotDePasse")
+.classList.toggle(
+"hidden",
+modeConnexion
+);
+
+}
+
+
+/* =========================
+CREATION / CONNEXION
+========================= */
+
+function validerConnexion() {
+
+let email =
+document.getElementById("email")
+.value
+.trim()
+.toLowerCase();
+
+let motDePasse =
+document.getElementById("motDePasse")
+.value;
+
+if(!email || !motDePasse) {
+
+alert("Remplis tous les champs.");
+
+return;
+
+}
+
+
+/* CREATION */
+
+if(!modeConnexion) {
+
+let motDePasse2 =
+document.getElementById("motDePasse2")
+.value;
+
+if(motDePasse !== motDePasse2) {
+
+alert(
+"Les deux mots de passe sont différents."
+);
+
+return;
+
+}
+
+let existe =
+utilisateurs.find(function(user) {
+
+return user.email === email;
+
+});
+
+if(existe) {
+
+alert(
+"Un compte existe déjà avec cette adresse."
+);
+
+return;
+
+}
+
+utilisateurs.push({
+
+email: email,
+
+motDePasse: motDePasse
+
+});
+
+localStorage.setItem(
+"lenny_utilisateurs",
+JSON.stringify(utilisateurs)
+);
+
+utilisateurConnecte = email;
+
+localStorage.setItem(
+"lenny_utilisateur",
+email
+);
+
+alert(
+"🎉 Compte créé !"
+);
+
+fermerConnexion();
+
+actualiserUtilisateur();
+
+return;
+
+}
+
+
+/* CONNEXION */
+
+let utilisateur =
+utilisateurs.find(function(user) {
+
+return (
+user.email === email &&
+user.motDePasse === motDePasse
+);
+
+});
+
+if(!utilisateur) {
+
+alert(
+"❌ Adresse e-mail ou mot de passe incorrect."
+);
+
+return;
+
+}
+
+utilisateurConnecte = email;
+
+localStorage.setItem(
+"lenny_utilisateur",
+email
+);
+
+alert(
+"👋 Connexion réussie !"
+);
+
+fermerConnexion();
+
+actualiserUtilisateur();
+
+}
+
+
+/* =========================
+UTILISATEUR
+========================= */
+
+function actualiserUtilisateur() {
+
+let bouton =
+document.getElementById("connexionBouton");
+
+if(utilisateurConnecte) {
+
+bouton.textContent =
+"🚪 Se déconnecter";
+
+} else {
+
+bouton.textContent =
+"👤 Se connecter";
+
+}
+
+afficherCommandes();
+
+}
+
+
+function deconnexion() {
+
+utilisateurConnecte = "";
+
+localStorage.removeItem(
+"lenny_utilisateur"
+);
+
+actualiserUtilisateur();
+
+showPage("accueil");
+
+}
+
+
+/* =========================
+CREATION D'UN VRAI PDF
+========================= */
+
+function echapperPDF(texte) {
+
+return texte
+.replace(/\\/g, "\\\\")
+.replace(/\(/g, "\\(")
+.replace(/\)/g, "\\)");
+
+}
+
+
+function creerPDF(titre, texte) {
+
+let lignes = [];
+
+lignes.push(titre);
+lignes.push("");
+lignes.push(texte);
+lignes.push("");
+lignes.push(
+"Formation gratuite - Lenny Academy"
+);
+
+let contenu =
+"BT\n" +
+"/F1 16 Tf\n" +
+"50 780 Td\n";
+
+lignes.forEach(function(ligne, index) {
+
+if(index > 0) {
+
+contenu +=
+"0 -30 Td\n";
+
+}
+
+contenu +=
+"(" +
+echapperPDF(ligne) +
+") Tj\n";
+
+});
+
+contenu +=
+"ET";
+
+let objets = [];
+
+objets[1] =
+"<< /Type /Catalog /Pages 2 0 R >>";
+
+objets[2] =
+"<< /Type /Pages /Kids [3 0 R] /Count 1 >>";
+
+objets[3] =
+"<< /Type /Page /Parent 2 0 R " +
+"/MediaBox [0 0 595 842] " +
+"/Resources << /Font << /F1 4 0 R >> >> " +
+"/Contents 5 0 R >>";
+
+objets[4] =
+"<< /Type /Font /Subtype /Type1 " +
+"/BaseFont /Helvetica >>";
+
+objets[5] =
+"<< /Length " +
+contenu.length +
+" >>\nstream\n" +
+contenu +
+"\nendstream";
+
+let pdf =
+"%PDF-1.4\n";
+
+let positions = [0];
+
+for(let i = 1; i <= 5; i++) {
+
+positions[i] = pdf.length;
+
+pdf +=
+i +
+" 0 obj\n" +
+objets[i] +
+"\nendobj\n";
+
+}
+
+let xref =
+pdf.length;
+
+pdf +=
+"xref\n0 6\n";
+
+pdf +=
+"0000000000 65535 f \n";
+
+for(let i = 1; i <= 5; i++) {
+
+pdf +=
+String(positions[i])
+.padStart(10,"0") +
+" 00000 n \n";
+
+}
+
+pdf +=
+"trailer\n" +
+"<< /Size 6 /Root 1 0 R >>\n" +
+"startxref\n" +
+xref +
+"\n%%EOF";
+
+return new Blob(
+[pdf],
+{type:"application/pdf"}
+);
+
+}
+
+
+/* =========================
+OUVRIR PDF
+========================= */
+
+function ouvrirPDF(
+formationId,
+numeroDocument
+) {
+
+if(!utilisateurConnecte) {
+
+ouvrirConnexion();
+
+return;
+
+}
+
+let formation =
+formations.find(function(f) {
+
+return f.id === formationId;
+
+});
+
+let documentPDF =
+formation.documents[numeroDocument];
+
+let blob =
+creerPDF(
+documentPDF.titre,
+documentPDF.texte
+);
+
+let url =
+URL.createObjectURL(blob);
+
+window.open(url, "_blank");
+
+}
+
+
+/* =========================
+DEMARRAGE
+========================= */
+
+afficherFormations();
+
+actualiserUtilisateur();
+
+</script>
+
+</body>
+</html>
